@@ -15,8 +15,8 @@ class _JigsawHomePageState extends State<JigsawHomePage>
     with SingleTickerProviderStateMixin {
   ui.Image canvasImage;
   bool _loaded = false;
-  List<JigsawPiece> pieceOnBoard;
-  List<JigsawPiece> pieceOnPool;
+  List<JigsawPiece> pieceOnBoard = [];
+  List<JigsawPiece> pieceOnPool = [];
 
   JigsawPiece _currentPiece;
   Animation<Offset> _offsetAnimation;
@@ -38,8 +38,8 @@ class _JigsawHomePageState extends State<JigsawHomePage>
   }
 
   void _prepareGame() async {
-    pieceOnPool = [];
-    pieceOnBoard = [];
+    pieceOnPool.clear();
+    pieceOnBoard.clear();
 
     setState(() {
       _loaded = false;
